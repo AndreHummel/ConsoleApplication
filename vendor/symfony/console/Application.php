@@ -45,7 +45,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * An Application is the container for a collection of commands.
  *
- * It is the main entry point of a Console application.
+ * It is the main entry point of a Console app.
  *
  * This class is optimized for a standard CLI environment.
  *
@@ -74,8 +74,8 @@ class Application
     private $singleCommand;
 
     /**
-     * @param string $name    The name of the application
-     * @param string $version The version of the application
+     * @param string $name    The name of the app
+     * @param string $version The version of the app
      */
     public function __construct($name = 'UNKNOWN', $version = 'UNKNOWN')
     {
@@ -97,7 +97,7 @@ class Application
     }
 
     /**
-     * Runs the current application.
+     * Runs the current app.
      *
      * @param InputInterface  $input  An Input instance
      * @param OutputInterface $output An Output instance
@@ -168,7 +168,7 @@ class Application
     }
 
     /**
-     * Runs the current application.
+     * Runs the current app.
      *
      * @param InputInterface  $input  An Input instance
      * @param OutputInterface $output An Output instance
@@ -252,7 +252,7 @@ class Application
     }
 
     /**
-     * Set an input definition to be used with this application.
+     * Set an input definition to be used with this app.
      *
      * @param InputDefinition $definition The input definition
      */
@@ -329,9 +329,9 @@ class Application
     }
 
     /**
-     * Gets the name of the application.
+     * Gets the name of the app.
      *
-     * @return string The application name
+     * @return string The app name
      */
     public function getName()
     {
@@ -339,9 +339,9 @@ class Application
     }
 
     /**
-     * Sets the application name.
+     * Sets the app name.
      *
-     * @param string $name The application name
+     * @param string $name The app name
      */
     public function setName($name)
     {
@@ -349,9 +349,9 @@ class Application
     }
 
     /**
-     * Gets the application version.
+     * Gets the app version.
      *
-     * @return string The application version
+     * @return string The app version
      */
     public function getVersion()
     {
@@ -359,9 +359,9 @@ class Application
     }
 
     /**
-     * Sets the application version.
+     * Sets the app version.
      *
-     * @param string $version The application version
+     * @param string $version The app version
      */
     public function setVersion($version)
     {
@@ -369,9 +369,9 @@ class Application
     }
 
     /**
-     * Returns the long version of the application.
+     * Returns the long version of the app.
      *
-     * @return string The long application version
+     * @return string The long app version
      */
     public function getLongVersion()
     {
@@ -739,7 +739,7 @@ class Application
     }
 
     /**
-     * Tries to figure out the terminal width in which this application runs.
+     * Tries to figure out the terminal width in which this app runs.
      *
      * @return int|null
      *
@@ -753,7 +753,7 @@ class Application
     }
 
     /**
-     * Tries to figure out the terminal height in which this application runs.
+     * Tries to figure out the terminal height in which this app runs.
      *
      * @return int|null
      *
@@ -853,7 +853,7 @@ class Application
     /**
      * Runs the current command.
      *
-     * If an event dispatcher has been attached to the application,
+     * If an event dispatcher has been attached to the app,
      * events are also dispatched during the life-cycle of the command.
      *
      * @param Command         $command A Command instance
@@ -950,7 +950,7 @@ class Application
             new InputOption('--help', '-h', InputOption::VALUE_NONE, 'Display this help message'),
             new InputOption('--quiet', '-q', InputOption::VALUE_NONE, 'Do not output any message'),
             new InputOption('--verbose', '-v|vv|vvv', InputOption::VALUE_NONE, 'Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug'),
-            new InputOption('--version', '-V', InputOption::VALUE_NONE, 'Display this application version'),
+            new InputOption('--version', '-V', InputOption::VALUE_NONE, 'Display this app version'),
             new InputOption('--ansi', '', InputOption::VALUE_NONE, 'Force ANSI output'),
             new InputOption('--no-ansi', '', InputOption::VALUE_NONE, 'Disable ANSI output'),
             new InputOption('--no-interaction', '-n', InputOption::VALUE_NONE, 'Do not ask any interactive question'),
@@ -1067,7 +1067,7 @@ class Application
      * Sets the default Command name.
      *
      * @param string $commandName     The Command name
-     * @param bool   $isSingleCommand Set to true if there is only one command in this application
+     * @param bool   $isSingleCommand Set to true if there is only one command in this app
      *
      * @return self
      */

@@ -54,7 +54,7 @@ class CommandTest extends TestCase
         $application = new Application();
         $command = new \TestCommand();
         $command->setApplication($application);
-        $this->assertEquals($application, $command->getApplication(), '->setApplication() sets the current application');
+        $this->assertEquals($application, $command->getApplication(), '->setApplication() sets the current app');
         $this->assertEquals($application->getHelperSet(), $command->getHelperSet());
     }
 
@@ -233,13 +233,13 @@ class CommandTest extends TestCase
         $m = $r->getMethod('mergeApplicationDefinition');
         $m->setAccessible(true);
         $m->invoke($command);
-        $this->assertTrue($command->getDefinition()->hasArgument('foo'), '->mergeApplicationDefinition() merges the application arguments and the command arguments');
-        $this->assertTrue($command->getDefinition()->hasArgument('bar'), '->mergeApplicationDefinition() merges the application arguments and the command arguments');
-        $this->assertTrue($command->getDefinition()->hasOption('foo'), '->mergeApplicationDefinition() merges the application options and the command options');
-        $this->assertTrue($command->getDefinition()->hasOption('bar'), '->mergeApplicationDefinition() merges the application options and the command options');
+        $this->assertTrue($command->getDefinition()->hasArgument('foo'), '->mergeApplicationDefinition() merges the app arguments and the command arguments');
+        $this->assertTrue($command->getDefinition()->hasArgument('bar'), '->mergeApplicationDefinition() merges the app arguments and the command arguments');
+        $this->assertTrue($command->getDefinition()->hasOption('foo'), '->mergeApplicationDefinition() merges the app options and the command options');
+        $this->assertTrue($command->getDefinition()->hasOption('bar'), '->mergeApplicationDefinition() merges the app options and the command options');
 
         $m->invoke($command);
-        $this->assertEquals(3, $command->getDefinition()->getArgumentCount(), '->mergeApplicationDefinition() does not try to merge twice the application arguments and options');
+        $this->assertEquals(3, $command->getDefinition()->getArgumentCount(), '->mergeApplicationDefinition() does not try to merge twice the app arguments and options');
     }
 
     public function testMergeApplicationDefinitionWithoutArgsThenWithArgsAddsArgs()
@@ -255,14 +255,14 @@ class CommandTest extends TestCase
         $m = $r->getMethod('mergeApplicationDefinition');
         $m->setAccessible(true);
         $m->invoke($command, false);
-        $this->assertTrue($command->getDefinition()->hasOption('bar'), '->mergeApplicationDefinition(false) merges the application and the command options');
-        $this->assertFalse($command->getDefinition()->hasArgument('foo'), '->mergeApplicationDefinition(false) does not merge the application arguments');
+        $this->assertTrue($command->getDefinition()->hasOption('bar'), '->mergeApplicationDefinition(false) merges the app and the command options');
+        $this->assertFalse($command->getDefinition()->hasArgument('foo'), '->mergeApplicationDefinition(false) does not merge the app arguments');
 
         $m->invoke($command, true);
-        $this->assertTrue($command->getDefinition()->hasArgument('foo'), '->mergeApplicationDefinition(true) merges the application arguments and the command arguments');
+        $this->assertTrue($command->getDefinition()->hasArgument('foo'), '->mergeApplicationDefinition(true) merges the app arguments and the command arguments');
 
         $m->invoke($command);
-        $this->assertEquals(2, $command->getDefinition()->getArgumentCount(), '->mergeApplicationDefinition() does not try to merge twice the application arguments');
+        $this->assertEquals(2, $command->getDefinition()->getArgumentCount(), '->mergeApplicationDefinition() does not try to merge twice the app arguments');
     }
 
     public function testRunInteractive()

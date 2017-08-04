@@ -73,8 +73,8 @@ class ApplicationTest extends TestCase
     public function testConstructor()
     {
         $application = new Application('foo', 'bar');
-        $this->assertEquals('foo', $application->getName(), '__construct() takes the application name as its first argument');
-        $this->assertEquals('bar', $application->getVersion(), '__construct() takes the application version as its second argument');
+        $this->assertEquals('foo', $application->getName(), '__construct() takes the app name as its first argument');
+        $this->assertEquals('bar', $application->getVersion(), '__construct() takes the app version as its second argument');
         $this->assertEquals(array('help', 'list'), array_keys($application->all()), '__construct() registered the help and list commands by default');
     }
 
@@ -82,20 +82,20 @@ class ApplicationTest extends TestCase
     {
         $application = new Application();
         $application->setName('foo');
-        $this->assertEquals('foo', $application->getName(), '->setName() sets the name of the application');
+        $this->assertEquals('foo', $application->getName(), '->setName() sets the name of the app');
     }
 
     public function testSetGetVersion()
     {
         $application = new Application();
         $application->setVersion('bar');
-        $this->assertEquals('bar', $application->getVersion(), '->setVersion() sets the version of the application');
+        $this->assertEquals('bar', $application->getVersion(), '->setVersion() sets the version of the app');
     }
 
     public function testGetLongVersion()
     {
         $application = new Application('foo', 'bar');
-        $this->assertEquals('foo <info>bar</info>', $application->getLongVersion(), '->getLongVersion() returns the long version of the application');
+        $this->assertEquals('foo <info>bar</info>', $application->getLongVersion(), '->getLongVersion() returns the long version of the app');
     }
 
     public function testHelp()

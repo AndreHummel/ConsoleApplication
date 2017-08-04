@@ -27,7 +27,7 @@ use Symfony\Component\Console\Exception\RuntimeException;
  *     $input = new ArgvInput($_SERVER['argv']);
  *
  * If you pass it yourself, don't forget that the first element of the array
- * is the name of the running application.
+ * is the name of the running app.
  *
  * When passing an argument to the constructor, be sure that it respects
  * the same rules as the argv one. It's almost always better to use the
@@ -55,7 +55,7 @@ class ArgvInput extends Input
             $argv = $_SERVER['argv'];
         }
 
-        // strip the application name
+        // strip the app name
         array_shift($argv);
 
         $this->tokens = $argv;

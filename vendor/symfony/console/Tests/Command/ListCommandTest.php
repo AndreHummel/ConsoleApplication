@@ -79,7 +79,7 @@ Usage:
 Options:
   -h, --help            Display this help message
   -q, --quiet           Do not output any message
-  -V, --version         Display this application version
+  -V, --version         Display this app version
       --ansi            Force ANSI output
       --no-ansi         Disable ANSI output
   -n, --no-interaction  Do not ask any interactive question

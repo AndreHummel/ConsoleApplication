@@ -78,7 +78,7 @@ class Command
     }
 
     /**
-     * Sets the application instance for this command.
+     * Sets the app instance for this command.
      *
      * @param Application $application An Application instance
      */
@@ -113,7 +113,7 @@ class Command
     }
 
     /**
-     * Gets the application instance for this command.
+     * Gets the app instance for this command.
      *
      * @return Application An Application instance
      */
@@ -214,7 +214,7 @@ class Command
         $this->getSynopsis(true);
         $this->getSynopsis(false);
 
-        // add the application arguments and options
+        // add the app arguments and options
         $this->mergeApplicationDefinition();
 
         // bind the input against the command specific arguments/options
@@ -251,7 +251,7 @@ class Command
 
         // The command name argument is often omitted when a command is executed directly with its run() method.
         // It would fail the validation if we didn't make sure the command argument is present,
-        // since it's required by the application.
+        // since it's required by the app.
         if ($input->hasArgument('command') && null === $input->getArgument('command')) {
             $input->setArgument('command', $this->getName());
         }
@@ -304,7 +304,7 @@ class Command
     }
 
     /**
-     * Merges the application definition with the command definition.
+     * Merges the app definition with the command definition.
      *
      * This method is not part of public API and should not be used directly.
      *
@@ -364,7 +364,7 @@ class Command
      * Gets the InputDefinition to be used to create representations of this Command.
      *
      * Can be overridden to provide the original command representation when it would otherwise
-     * be changed by merging with the application InputDefinition.
+     * be changed by merging with the app InputDefinition.
      *
      * This method is not part of public API and should not be used directly.
      *
@@ -645,7 +645,7 @@ class Command
     public function getHelper($name)
     {
         if (null === $this->helperSet) {
-            throw new LogicException(sprintf('Cannot retrieve helper "%s" because there is no HelperSet defined. Did you forget to add your command to the application or to set the application on the command using the setApplication() method? You can also set the HelperSet directly using the setHelperSet() method.', $name));
+            throw new LogicException(sprintf('Cannot retrieve helper "%s" because there is no HelperSet defined. Did you forget to add your command to the app or to set the app on the command using the setApplication() method? You can also set the HelperSet directly using the setHelperSet() method.', $name));
         }
 
         return $this->helperSet->get($name);

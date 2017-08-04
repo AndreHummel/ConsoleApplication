@@ -73,9 +73,9 @@ class JsonDescriptor extends Descriptor
 
         $data = array();
         if ('UNKNOWN' !== $application->getName()) {
-            $data['application']['name'] = $application->getName();
+            $data['app']['name'] = $application->getName();
             if ('UNKNOWN' !== $application->getVersion()) {
-                $data['application']['version'] = $application->getVersion();
+                $data['app']['version'] = $application->getVersion();
             }
         }
 

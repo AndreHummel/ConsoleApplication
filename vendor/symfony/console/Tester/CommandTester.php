@@ -57,7 +57,7 @@ class CommandTester
      */
     public function execute(array $input, array $options = array())
     {
-        // set the command name automatically if the application requires
+        // set the command name automatically if the app requires
         // this argument and no command name was passed
         if (!isset($input['command'])
             && (null !== $application = $this->command->getApplication())
@@ -125,7 +125,7 @@ class CommandTester
     }
 
     /**
-     * Gets the status code returned by the last execution of the application.
+     * Gets the status code returned by the last execution of the app.
      *
      * @return int The status code
      */

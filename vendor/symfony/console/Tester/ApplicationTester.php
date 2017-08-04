@@ -21,10 +21,10 @@ use Symfony\Component\Console\Output\StreamOutput;
 /**
  * Eases the testing of console applications.
  *
- * When testing an application, don't forget to disable the auto exit flag:
+ * When testing an app, don't forget to disable the auto exit flag:
  *
- *     $application = new Application();
- *     $application->setAutoExit(false);
+ *     $app = new Application();
+ *     $app->setAutoExit(false);
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
@@ -45,7 +45,7 @@ class ApplicationTester
     }
 
     /**
-     * Executes the application.
+     * Executes the app.
      *
      * Available options:
      *
@@ -101,7 +101,7 @@ class ApplicationTester
     }
 
     /**
-     * Gets the display returned by the last execution of the application.
+     * Gets the display returned by the last execution of the app.
      *
      * @param bool $normalize Whether to normalize end of lines to \n or not
      *
@@ -121,7 +121,7 @@ class ApplicationTester
     }
 
     /**
-     * Gets the output written to STDERR by the application.
+     * Gets the output written to STDERR by the app.
      *
      * @param bool $normalize Whether to normalize end of lines to \n or not
      *
@@ -145,7 +145,7 @@ class ApplicationTester
     }
 
     /**
-     * Gets the input instance used by the last execution of the application.
+     * Gets the input instance used by the last execution of the app.
      *
      * @return InputInterface The current input instance
      */
@@ -155,7 +155,7 @@ class ApplicationTester
     }
 
     /**
-     * Gets the output instance used by the last execution of the application.
+     * Gets the output instance used by the last execution of the app.
      *
      * @return OutputInterface The current output instance
      */
@@ -165,7 +165,7 @@ class ApplicationTester
     }
 
     /**
-     * Gets the status code returned by the last execution of the application.
+     * Gets the status code returned by the last execution of the app.
      *
      * @return int The status code
      */

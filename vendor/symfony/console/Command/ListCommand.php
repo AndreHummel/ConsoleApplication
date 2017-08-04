@@ -19,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputDefinition;
 
 /**
- * ListCommand displays the list of all available commands for the application.
+ * ListCommand displays the list of all available commands for the app.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
