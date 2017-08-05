@@ -55,13 +55,25 @@ class ReadCsvCommand extends ContainerAwareCommand
         if(empty($csv)){
             throw new \Exception("No csv file");
         }
-
+        $row =0;
         $rows = array();
         if (($handle = fopen($csv->getRealPath(), "r")) !== FALSE) {
             while (($data = fgetcsv($handle, null, ",")) !== FALSE) {
                 $rows[] = $data;
+                $row++;
             }
             fclose($handle);
+        }
+
+        $columns = count(current($rows));
+        // At least two columns
+        if ($columns < 2) {
+            throw new \Exception("The csv file should have at least two columns");
+        }
+
+        // At least two rows (including header)
+        if($row < 2){
+            throw new \Exception("The csv file should have at least two rows");
         }
 
         return $rows;
